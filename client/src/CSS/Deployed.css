@@ -1,0 +1,14 @@
+.deployed {
+	background-color: #282c34;
+	height: 100vh;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	display: grid;
+	grid-template-columns: 2fr 8fr;
+	grid-template-rows: 1fr 5fr;
+}
+
+.backButton {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
