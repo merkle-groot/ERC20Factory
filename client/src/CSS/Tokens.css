@@ -6,6 +6,7 @@
 	display: grid;
 	grid-template-columns: 2fr repeat(8,1fr);
 	grid-template-rows: 1fr repeat(5,1fr);
+	font-family: 'Rajdhani', sans-serif;
 }
 
 .backButton {

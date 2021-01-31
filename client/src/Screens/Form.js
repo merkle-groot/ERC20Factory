@@ -8,8 +8,8 @@ import back from "../images/left-arrow.png";
 import ERC20FactoryObject from "../build/contracts/ERC20Factory.json";
 
 
-const web3 = new Web3('http://127.0.0.1:8584');
-const ERC20Factory = new web3.eth.Contract(ERC20FactoryObject.abi, '0x2D2e364AA38BbfF2fCb408E77E9Bb9e59633F853');
+const web3 = new Web3(Web3.givenProvider);
+const ERC20Factory = new web3.eth.Contract(ERC20FactoryObject.abi, '0x88e5f0db44aa7620315b8b722d2cf9c557fbbe9e');
 
 
 function Form() {
@@ -38,7 +38,6 @@ function Form() {
         setContractProp(ev.ContractCreated.returnValues.contractAddress);
         localStorage.setItem('addr', ev.ContractCreated.returnValues.contractAddress);
         setContractCreated(1);
-
     }
 
     if(contractCreated){

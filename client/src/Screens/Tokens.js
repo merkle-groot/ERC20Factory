@@ -18,13 +18,18 @@ const Tokens = () => {
     const [name, setName] = useState();
     const [symbol, setSymbol] = useState();
     const [supply, setSupply] = useState();
-    const web3 = new Web3('http://127.0.0.1:8584');
+    const web3 = new Web3(Web3.givenProvider);
     const ERC20 = new web3.eth.Contract(ERC20Contract.abi, addr);
 
     useEffect(()=>{
         loadData();
     },[])
 
+    const openExplorer = (e) => {
+        console.log('clicked')
+        e.preventDefault();
+        window.location.href = `https://goerli.etherscan.io/address/${addr}#internaltx`;  
+    }
     
 
     const loadData = async() => {
@@ -55,7 +60,8 @@ const Tokens = () => {
                 <h2>Here's Your Token!</h2>
             </div>
 
-            <div className="tokenBody">
+            
+            <div className="tokenBody" onClick={(e)=> openExplorer(e)}>      
                 <div className="tokenHeader">
                     <h1>ERC-20</h1>
                 </div>
@@ -73,10 +79,7 @@ const Tokens = () => {
                         <p>{symbol}</p>
                         <p>{supply}</p>
                         <p className="addr">{addr.slice(0,25)}....</p>
-                    </div>
-
-                
-                
+                    </div> 
             </div>
         </div>
     );

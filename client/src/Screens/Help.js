@@ -2,15 +2,22 @@ import '../CSS/Help.css';
 import {
 	Link
 } from "react-router-dom";
+import back from "../images/left-arrow.png";
 
 function Help() {
 	return(
 		<div className="helpSection">
 			<div className="backButton">
 				<Link to='/'>
-					<h1>BACK</h1>
+                    <img src={back} alt="back button"/>
 				</Link>
-			</div>
+
+                <Link to='/' className="imgbox">
+                    <h1>BACK</h1>
+                </Link>
+            </div>
+
+			
 		</div>
 	);
 }
