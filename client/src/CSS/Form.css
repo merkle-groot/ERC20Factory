@@ -53,3 +53,13 @@ input {
 	border-color: white;
 }
 
+.loadingScreen{
+	height: 100vh;
+	font-size: calc(10px + 2vmin);
+	font-family: 'Rajdhani', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+

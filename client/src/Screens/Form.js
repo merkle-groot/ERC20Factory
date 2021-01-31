@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import '../CSS/Form.css';
 import {
-  Link, Redirect, useHistory 
+  Link, Redirect
 } from "react-router-dom";
 import Web3 from "web3";
 import back from "../images/left-arrow.png";
 import ERC20FactoryObject from "../build/contracts/ERC20Factory.json";
+import logo from '../images/ethereum-eth-logo-animated.gif';
 
 
 const web3 = new Web3(Web3.givenProvider);
@@ -13,31 +14,53 @@ const ERC20Factory = new web3.eth.Contract(ERC20FactoryObject.abi, '0x88e5f0db44
 
 
 function Form() {
+
+    useEffect(()=>{
+        alert("Please switch your Metamask network to Goerli Testnet");
+    },[]);
+
     const [name, setName] = useState();
     const [symbol, setSymbol] = useState();
     const [supply, setSupply] = useState();
     const [contractProp, setContractProp] = useState();
     const [contractCreated, setContractCreated] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async(e) => {
         e.preventDefault();
         const accounts = await window.ethereum.enable();
+        setIsLoading(true);
         const account = accounts[0];
         console.log(account);
 
-        const gas = await ERC20Factory.methods.createChildContract(name,symbol,parseInt(supply)).estimateGas();
-        const createResponse = await ERC20Factory.methods.createChildContract(name,symbol,parseInt(supply)).send(
-            {
-                from: account,
-                gas
-            }
-        );
-        console.log(createResponse);
-        let ev = createResponse.events;
-        console.log(ev.ContractCreated.returnValues.contractAddress); 
-        setContractProp(ev.ContractCreated.returnValues.contractAddress);
-        localStorage.setItem('addr', ev.ContractCreated.returnValues.contractAddress);
-        setContractCreated(1);
+        try{ 
+            const gas = await ERC20Factory.methods.createChildContract(name,symbol,parseInt(supply)).estimateGas();
+            const createResponse = await ERC20Factory.methods.createChildContract(name,symbol,parseInt(supply)).send(
+                {
+                    from: account,
+                    gas
+                }
+            );
+            console.log(createResponse);
+            let ev = createResponse.events;
+            console.log(ev.ContractCreated.returnValues.contractAddress); 
+            setContractProp(ev.ContractCreated.returnValues.contractAddress);
+            localStorage.setItem('addr', ev.ContractCreated.returnValues.contractAddress);
+            setIsLoading(false);
+            setContractCreated(1);
+        } catch {
+            alert('Transaction Declined');
+            setIsLoading(false);
+        }
+    }
+
+    if(isLoading){
+        return(
+            <div className="loadingScreen">
+                <h1>Loading....</h1>
+				<img src={logo} alt="eth logo"/>
+			</div>
+        )
     }
 
     if(contractCreated){
@@ -84,7 +107,7 @@ function Form() {
                     </div>
 
                     <div className="single-input">     
-                        <input min="1" max="115792089237316195423570985008687907853269984665640564039457584007913129639935" required type="number" name="supply" onChange={(event) => setSupply(event.target.value)} value={supply}/>
+                        <input min="1" maxLength="10" required type="number" name="supply" onChange={(event) => setSupply(event.target.value)} value={supply}/>
                     </div>
 
                     <div className="single-input submit"> 
