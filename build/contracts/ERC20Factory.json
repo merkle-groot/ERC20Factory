@@ -8042,12 +8042,12 @@
         }
       },
       "links": {},
-      "address": "0x53782cCB154c04c7e318a5B4b21DBbC401e0d77e",
-      "transactionHash": "0x5c21d182e1bdd230c34818d73e33e23194da64d96035ea7af679acec7d8b8bd7"
+      "address": "0x338CF329D5615Ea2830E19b9185AF2E42593982C",
+      "transactionHash": "0x357c7b62597426b09de38329317a3faa0e17d8359992347f866d6f1c700fc14f"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-01-25T10:15:32.430Z",
+  "updatedAt": "2021-01-27T10:19:11.710Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "Contract for creating child contracts",

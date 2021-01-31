@@ -1,0 +1,73 @@
+.tokenScreen {
+	background-color:white;
+	font-size: calc(10px + 2vmin);
+	height: 100vh;
+	color: white;
+	display: grid;
+	grid-template-columns: 2fr repeat(8,1fr);
+	grid-template-rows: 1fr repeat(5,1fr);
+}
+
+.backButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+    grid-row: 1/2;
+	grid-column: 1/2;
+	color:#1DB954;
+}
+
+.imgBox{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.backButton img{
+	height: 1.5em;
+	width: 1.8em;
+	padding-right: 0.5em;
+}
+
+.tokenBody{
+    grid-row: 3/6;
+	grid-column: 3/7;
+	background-color: #1DB954;
+	font-size: calc(5px + 2vmin);
+
+	display: grid;
+	grid-template-columns: repeat(10,1fr);
+	grid-template-rows: 2fr repeat(4,1fr);
+}
+
+.tokenHeader{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-row: 1/2;
+	grid-column: 1/5;
+	border: black 1em;
+}
+
+.tokenHeading{
+	grid-row: 2/3;
+	grid-column: 3/7;
+	color: #121212;
+	font-weight: 100 !important;
+}
+
+.tokenKey{
+	grid-row: 2/6;
+	grid-column: 2/6;
+}
+
+.tokenValue{
+	grid-row: 2/6;
+	grid-column: 6/10;
+}
+
+.addr{
+	font-size: calc(1px + 2vmin);
+
+}

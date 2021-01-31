@@ -10,6 +10,7 @@ import Home from './Screens/Home';
 import Deployed from './Screens/Deployed';
 import Help from './Screens/Help';
 import Form from './Screens/Form';
+import Tokens from './Screens/Tokens';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -25,6 +26,9 @@ ReactDOM.render(
 				</Route>
 				<Route path="/deployed">
 					<Deployed />
+				</Route>
+				<Route path='/tokens'>
+					<Tokens/>
 				</Route>
 				<Route path="/">
 					<Home />

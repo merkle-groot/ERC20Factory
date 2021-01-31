@@ -44,7 +44,7 @@ module.exports = {
     //
     development: {
      host: "127.0.0.1",     // Localhost (default: none)
-     port: 6969,            // Standard Ethereum port (default: none)
+     port: 8584,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
     // Another network with more advanced options...
@@ -73,6 +73,7 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
+  contracts_build_directory: './client/src/build/contracts/',
 
   // Set default mocha options here, use special reporters etc.
   mocha: {

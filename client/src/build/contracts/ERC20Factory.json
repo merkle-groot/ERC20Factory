@@ -8025,6 +8025,46 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
+    "69": {
+      "events": {
+        "0xcf78cf0d6f3d8371e1075c69c492ab4ec5d8cf23a1a239b6a51a1d00be7ca312": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "contractAddress",
+              "type": "address"
+            }
+          ],
+          "name": "ContractCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7427e27bDC249a6dF1bb39Bb690FD37560A1aF99",
+      "transactionHash": "0x74b63d4b3c588e63c1a9c84a62932019d1d6c09036845b285696e02fc40ff40a"
+    },
+    "1337": {
+      "events": {
+        "0xcf78cf0d6f3d8371e1075c69c492ab4ec5d8cf23a1a239b6a51a1d00be7ca312": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "contractAddress",
+              "type": "address"
+            }
+          ],
+          "name": "ContractCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x2D2e364AA38BbfF2fCb408E77E9Bb9e59633F853",
+      "transactionHash": "0x7c3d1a657e30402f55aac73777f0f4d4e95d3462d614092cf22ee82723088bfb"
+    },
     "5777": {
       "events": {
         "0xcf78cf0d6f3d8371e1075c69c492ab4ec5d8cf23a1a239b6a51a1d00be7ca312": {
@@ -8047,7 +8087,7 @@
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-01-25T10:15:32.430Z",
+  "updatedAt": "2021-01-27T14:32:23.676Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "Contract for creating child contracts",
